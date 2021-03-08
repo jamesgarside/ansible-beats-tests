@@ -36,8 +36,8 @@ services:
   ubuntu:
     container_name: ubuntu_ansible
     build:
-      context: ../../
-      dockerfile: ${BEAT_TYPE}/tests/Dockerfile
+      context: ../
+      dockerfile: tests/Dockerfile
       args:
         BEAT_TYPE: ${BEAT_TYPE}
         CONTAINER_PERSIST: ${CONTAINER_PERSIST}
