@@ -3,7 +3,7 @@
 ENV_FILE=.././
 
 # Check if in 'tests' directory, if not exit
-if [[ "$PWD" != *beat/tests ]]; then
+if [["$PWD" != *tests ]] ; then
     echo "Not in tests directory"
     exit 1
 fi
