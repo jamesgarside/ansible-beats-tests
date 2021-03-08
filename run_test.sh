@@ -1,5 +1,7 @@
 #! /bin/bash
 
+ENV_FILE=.././
+
 # Check if in 'tests' directory, if not exit
 if [[ "$PWD" != *beat/tests ]]; then
     echo "Not in tests directory"
@@ -7,16 +9,16 @@ if [[ "$PWD" != *beat/tests ]]; then
 fi
 
 # Load .env file
-if [ -f .env ]
+if [ -f $ENV_FILE ]
 then
-    export $(cat .env | grep -v '#' | awk '/=/ {print $1}')
+    export $(cat $ENV_FILE | grep -v '#' | awk '/=/ {print $1}')
     echo ""
     echo "Beat Type: $BEAT_TYPE"
     echo "Version: $VERSION"
     echo "Container Persist: $CONTAINER_PERSIST"
     echo ""
 else
-    echo "No .env file found. This is required to run tests"
+    echo "No .env file at path $ENV_FILE found. This is required to run tests"
     exit 1
 fi
 
