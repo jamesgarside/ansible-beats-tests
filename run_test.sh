@@ -1,6 +1,6 @@
 #! /bin/bash
 
-ENV_FILE=.././
+ENV_FILE=.././.env
 
 # Check if in 'tests' directory, if not exit
 if [["$PWD" != *tests ]] ; then
